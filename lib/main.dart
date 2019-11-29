@@ -1,0 +1,13 @@
+import 'package:flutter/material.dart';
+
+import 'home_widget.dart';
+
+void main() => runApp(App());
+
+class App extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => MaterialApp(
+        title: 'Half-Life: Alyx countdown',
+        home: Home(),
+      );
+}
