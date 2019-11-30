@@ -1,6 +1,6 @@
-# fl_hla_timer
+# Flutter Half-Life: Alyx countdown timer.
 
-A new Flutter project.
+Will show countdown timer for hl: alyx release and news layout.
 
 ## Getting Started
 
