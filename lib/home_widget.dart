@@ -23,19 +23,13 @@ class _HomeState extends State<Home> {
           currentIndex: _currentIndex,
           items: [
             BottomNavigationBarItem(
-                activeIcon: Image.asset('assets/images/newspaper.png',
-                    width: 40, height: 40),
-                icon: Image.asset('assets/images/newspaper.png',
-                    width: 34, height: 34),
-                title: Text(
-                  'News',
-                )),
+              icon: Icon(Icons.web_asset),
+              title: Text('News'),
+            ),
             BottomNavigationBarItem(
-                activeIcon: Image.asset('assets/images/megaphone.png',
-                    width: 40, height: 40),
-                icon: Image.asset('assets/images/megaphone.png',
-                    width: 34, height: 34),
-                title: Text('Timer'))
+              icon: Icon(Icons.access_alarm),
+              title: Text('Timer'),
+            )
           ],
         ),
       );
