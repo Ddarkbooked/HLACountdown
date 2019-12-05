@@ -1,6 +1,7 @@
+import 'package:flutter/services.dart';
+
 import 'placeholder_widget.dart';
 import 'package:flutter/material.dart';
-
 import 'timer_widget.dart';
 
 class Home extends StatefulWidget {
@@ -16,23 +17,30 @@ class _HomeState extends State<Home> {
   ];
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        body: _children[_currentIndex],
-        bottomNavigationBar: BottomNavigationBar(
-          onTap: onTabTapped,
-          currentIndex: _currentIndex,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.web_asset),
-              title: Text('News'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.access_alarm),
-              title: Text('Timer'),
-            )
-          ],
-        ),
-      );
+  Widget build(BuildContext context) {
+    
+SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+   statusBarColor: Colors.white, // Color for Android
+   statusBarBrightness: Brightness.dark // Dark == white status bar -- for IOS.
+));
+    return Scaffold(
+      body: _children[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped,
+        currentIndex: _currentIndex,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.web_asset),
+            title: Text('News'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.access_alarm),
+            title: Text('Timer'),
+          )
+        ],
+      ),
+    );
+  }
 
   void onTabTapped(int index) {
     setState(() {
