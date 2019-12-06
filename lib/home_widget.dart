@@ -1,5 +1,3 @@
-import 'package:flutter/services.dart';
-
 import 'placeholder_widget.dart';
 import 'package:flutter/material.dart';
 import 'timer_widget.dart';
@@ -11,26 +9,46 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentIndex = 1;
-  final List<Widget> _children = [
-    PlaceholderWidget(Colors.greenAccent),
-    TimerWidget()
-  ];
+  PageController _pageController;
+  final List<Widget> _children = [NewsWidget(), TimerCountdownWidget()];
+
+  @override
+  void initState() {
+    _pageController = PageController(initialPage: _currentIndex);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    
-SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-   statusBarColor: Colors.white, // Color for Android
-   statusBarBrightness: Brightness.dark // Dark == white status bar -- for IOS.
-));
     return Scaffold(
-      body: _children[_currentIndex],
+      appBar: AppBar(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(12),
+          ),
+        ),
+        backgroundColor: Color.fromRGBO(247, 72, 67, 1),
+        title: Text('Half-Life: Alyx Countdown'),
+        elevation: 5,
+      ),
+      body: PageView(
+        children: _children,
+        controller: _pageController,
+        onPageChanged: (newPage) {
+          setState(() {
+            this._currentIndex = newPage;
+          });
+        },
+      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
         currentIndex: _currentIndex,
+        selectedItemColor: Color.fromRGBO(247, 72, 67, 1),
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.web_asset),
+            icon: Icon(
+              Icons.web_asset,
+            ),
             title: Text('News'),
           ),
           BottomNavigationBarItem(
@@ -44,6 +62,8 @@ SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
 
   void onTabTapped(int index) {
     setState(() {
+      this._pageController.animateToPage(index,
+          curve: Curves.easeInOutCubic, duration: Duration(milliseconds: 450));
       _currentIndex = index;
     });
   }
