@@ -39,7 +39,7 @@ class _TimerCountdownWidgetState extends State<TimerCountdownWidget> {
     Timer.periodic(Duration(seconds: 1), (Timer t) {
       setState(() {
         _now = DateTime.now().second.toString();
-        _calcTime();
+        // _calcTime();
       });
     });
   }
