@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "318212633431",
+    "firebase_url": "https://hlacountdown.firebaseio.com",
+    "project_id": "hlacountdown",
+    "storage_bucket": "hlacountdown.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318212633431:android:3b1d938d9fdeaea9524412",
+        "android_client_info": {
+          "package_name": "com.ddark.hlacountdown"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318212633431-muncue6utkutp1tumo8gl0f1puuasj42.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTv6oc-1Ful_STE_CVp3_L44C1KSn5QD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318212633431-muncue6utkutp1tumo8gl0f1puuasj42.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "318212633431-gnlnoqrl5nlmnf2lj8qk6b3269b6i4bh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ddark.hlacountdown"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

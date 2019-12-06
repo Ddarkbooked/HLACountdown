@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'home_widget.dart';
+import 'layouts/home_widget.dart';
 
 void main() => runApp(App());
 

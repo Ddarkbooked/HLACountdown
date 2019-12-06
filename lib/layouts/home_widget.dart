@@ -1,5 +1,5 @@
-import 'placeholder_widget.dart';
 import 'package:flutter/material.dart';
+import 'news_widget.dart';
 import 'timer_widget.dart';
 
 class Home extends StatefulWidget {
@@ -10,6 +10,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _currentIndex = 1;
   PageController _pageController;
+
   final List<Widget> _children = [NewsWidget(), TimerCountdownWidget()];
 
   @override
@@ -28,7 +29,14 @@ class _HomeState extends State<Home> {
           ),
         ),
         backgroundColor: Color.fromRGBO(247, 72, 67, 1),
-        title: Text('Half-Life: Alyx Countdown'),
+        title: AnimatedCrossFade(
+          crossFadeState: _currentIndex == 0
+              ? CrossFadeState.showFirst
+              : CrossFadeState.showSecond,
+          duration: Duration(milliseconds: 125),
+          firstChild: Text('News'),
+          secondChild: Text('Timer'),
+        ),
         elevation: 5,
       ),
       body: PageView(
