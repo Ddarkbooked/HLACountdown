@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class PlaceholderWidget extends StatelessWidget {
-  final Color color;
-
-  PlaceholderWidget(this.color);
-
+class NewsWidget extends StatefulWidget {
   @override
-  Widget build(BuildContext context) => Material(child: Container(color: color));
+  _NewsWidgetState createState() => _NewsWidgetState();
+}
+
+class _NewsWidgetState extends State<NewsWidget> {
+  @override
+  Widget build(BuildContext context) => Material(child: Container());
 }
